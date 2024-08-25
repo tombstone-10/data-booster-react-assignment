@@ -11,7 +11,6 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-// TypeScript interfaces
 interface Answer {
   id: string;
   answer: string;
@@ -47,7 +46,6 @@ interface Data {
   lessons: Lesson[];
 }
 
-// Loader function to read data from the JSON file
 export const loader = async () => {
   const filePath = path.resolve(process.cwd(), "app/static/lessons.json");
   const fileContents = await fs.readFile(filePath, "utf-8");

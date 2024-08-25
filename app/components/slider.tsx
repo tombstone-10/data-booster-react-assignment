@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useLoaderData } from "@remix-run/react";
-import "../css/slider.css"; // Import the CSS file
+import "../css/slider.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-// TypeScript interfaces
 interface Answer {
   id: string;
   answer: string;
@@ -50,14 +49,14 @@ const Slider = () => {
   const handleNext = () => {
     if (currentIndex < exercises.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      setSelectedAnswerId(null); // Reset selection when moving to the next slide
+      setSelectedAnswerId(null);
     }
   };
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
-      setSelectedAnswerId(null); // Reset selection when moving to the previous slide
+      setSelectedAnswerId(null);
     }
   };
 
@@ -90,7 +89,7 @@ const Slider = () => {
                 __html: currentExercise.description || "",
               }}
             ></p>
-            {/* as the figma design did not have a hint UI */}
+            {/* as the figma design did not have a hint UI so i commented this*/}
             {/* <div className="hint-container">
               <p className="exercise-hint">Hint: </p>
               {currentExercise.hint && (
